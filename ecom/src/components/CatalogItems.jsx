@@ -1,5 +1,6 @@
 import styled  from 'styled-components';
 import React from 'react';
+import { mobile } from "../responsive";
 
 // creating a section under the slider for items that are on available
 const Info = styled.div`
@@ -29,6 +30,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover; 
+  ${mobile({ height: "20vh" })}
 `;
  
 // was going to add the info, title and button at the button but I feel it looked better in the center.

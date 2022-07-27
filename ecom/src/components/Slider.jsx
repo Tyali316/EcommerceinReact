@@ -19,7 +19,7 @@ const Container = styled.div`
 const Arrow = styled.div`
    width: 50px;
    height: 50px;
-   background-color: white;
+   background-color: black;
    border-radius: 50%;
    display:flex
    align-items: center;
@@ -98,7 +98,7 @@ const Slider = () => {
   return (
        <Container>
          <Arrow direction= "left" onClick={() => handleClick("left")}>
-            <ArrowLeftOutlined />
+            <ArrowLeftOutlined style={{color:"white", fontSize:"50px"}}/>
          </Arrow>
           <Wrapper slideIndex={slideIndex}>
             {sliderItems.map(item =>(
@@ -115,7 +115,7 @@ const Slider = () => {
         ))}
           </Wrapper>
          <Arrow direction= "right" onClick={() => handleClick("right")}>
-            <ArrowRightOutlined />
+            <ArrowRightOutlined style={{color:"white", fontSize:"50px"}}/>
          </Arrow>
        </Container>
    )

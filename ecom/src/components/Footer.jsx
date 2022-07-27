@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import React from 'react';
-import { EmailOutlined, FacebookOutlined, GitHub, Instagram, LocationOnOutlined, PhoneIphoneOutlined, Twitter } from '@mui/icons-material';
+import { EmailOutlined, FacebookOutlined, GitHub, Instagram, LocationOnOutlined, PhoneIphoneOutlined, Twitter } from "@mui/icons-material";
+import {mobile} from "../responsive";
 
 // these are all the styles for each item in the footer
 const Container = styled.div`
   display: flex;
   background-color: slategray;
+  ${mobile({ flexDirection: "column"})}
 `;
 const Left = styled.div`
   flex: 1;
@@ -35,6 +37,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 25px;
+  ${mobile({ display: "none" })}
 `;
 
 const Title = styled.h3`
@@ -56,6 +59,7 @@ const ListItem = styled.li`
 const Right= styled.div`
   flex: 1;
   padding: 20px;
+
 `;
 const ContactItem = styled.div`
   margin-bottom: 20px;

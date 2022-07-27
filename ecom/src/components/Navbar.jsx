@@ -2,33 +2,36 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import { Badge } from '@mui/material';
-import { Search, ShoppingBagOutlined } from "@mui/icons-material";
+import { Search } from "@mui/icons-material";
 import oro from './images/oro.jpg';
-
-
+import { mobile } from "../responsive";
+// import './Navbar.css';
 
 // adding the container for the navigation bar
 //eslint-disable-next-line 
 const Container = styled.div`
      border-radius: 0.5rem;
-     height: 80px;
+     height: 70px;
      background-color: mistyrose;
-     margin-top: 10px;
-     
+    //  margin-top: 10px;
+     ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
    padding: 10px 20px;
    display: flex;
    justify-content: space-between;
+   ${mobile({ padding: "10px 0px" })}
 `;
 
 const Left = styled.div`
   flex: 1;
+  
 `;
 
 const Center = styled.div`
   flex: 1;
+  ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
 
@@ -38,6 +41,7 @@ const Right = styled.div`
   align-items: center;
   justify-content: flex-end;
 `;
+
 
 // need to figure out how to get the search icon inside the input box
 const SearchContainer = styled.div`
@@ -51,6 +55,7 @@ const SearchContainer = styled.div`
 const Input = styled.input`
   border: none;
   height: 20px;
+  ${mobile({ width: "50px" })}
 `
 //adding the navigation bar content, switching the layout from what version 1 looked like.
 const Navbar = () => {
@@ -64,28 +69,33 @@ const Navbar = () => {
             </Center>
             <Right>
               <ul style={{display: "flex"}}>
-                <li style={{marginRight: "20px", display: "flex"}}>
-                  <Link style={{textDecoration: 'none'}} to="/">Home</Link>
+                <li style={{display: "flex"}}>
+                  <Link style={{textDecoration: 'none', color: "black", fontSize: "20px", marginRight: "20px"}} to="/">Home</Link>
                 </li>
-                <li style={{marginRight: "20px", display: "flex"}}>
-                  <Link style={{textDecoration: 'none'}} to="/shop">Shop</Link>
+                <li style={{ display: "flex"}}>
+                  <Link style={{textDecoration: 'none', color: "black", fontSize: "20px", marginRight: "20px"}} to="/shop">Shop</Link>
                 </li>
-                <li style={{marginRight: "25px", display: "flex"}}>
-                  <Link style={{textDecoration: 'none', }} to="/contact">Contact</Link>
+                <li style={{display: "flex"}}>
+                  <Link style={{textDecoration: 'none', color: "black", fontSize: "20px", paddingRight: "100px"}} to="/contact">Contact</Link>
                 </li>
-                <li style={{marginRight: "25px", display: "flex"}}>
-                  <Link style={{textDecoration: 'none', }} to="/register">Register</Link>
+          
+                <li style={{display: "flex"}}>
+                <br />
+                  <Link style={{textDecoration: 'none', color: "black", fontSize: "20px", paddingLeft: "28%"}} to="/register">Register</Link>
                 </li>
-                <li style={{marginRight: "25px", display: "flex"}}>
-                  <Link style={{textDecoration: 'none', }} to="/login">Login</Link>
+                <li style={{display: "flex"}}>
+                  <Link style={{textDecoration: 'none', color: "black", fontSize: "20px", paddingLeft: "48%"}} to="/login">Login</Link>
                 </li>
-              </ul>
-                      <Badge badgeContent={4} color='primary'>
-                        <ShoppingBagOutlined />
-                      </Badge>
+                <li style={{display: "flex"}}>
+                  <Link style={{textDecoration: 'underline', color: "black", fontSize: "20px", paddingLeft: "75%" }} to="/cart">Cart</Link>
+                  <Badge badgeContent={4} color='primary' size="15px">
+                        {/* <ShoppingBagOutlined /> */}
+                  </Badge>
+                </li>
+             </ul>          
                   <SearchContainer>
                     <Input />
-                    <Search style={{color:"black", fontSize: 16}}/>
+                    <Search placeholder="Search" style={{color:"black", fontSize: 16}}/>
                   </SearchContainer>
             </Right>
         </Wrapper>

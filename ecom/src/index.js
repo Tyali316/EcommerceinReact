@@ -1,26 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Cart from "./pages/Cart";
 
-// const express = require("express");
-// const app = express();
-// const mysql = require("mysql");
-
-// const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "password",
-//   database: "ecom",
-// });
-
-// app.listen(3000, () => {
-//   console.log("Yay, your server is running");
-// });
 
 function App() {
   return (
@@ -31,11 +18,15 @@ function App() {
         <Route path="contact" element={<Contact />}/>
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App />);
 
 export default App;
