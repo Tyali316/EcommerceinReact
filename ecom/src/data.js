@@ -23,7 +23,7 @@ export const sliderItems = [
 export const catalog = [
 {
     id: 1,
-    img: "https://cdn.shopify.com/s/files/1/0286/4703/0828/products/lucy-williams-chunky-entwine-hoop-earrings-earrings-missoma-18ct-gold-plated-655924_700x.jpg?v=1651745812",
+    img: "https://cdn.shopify.com/s/files/1/0286/4703/0828/products/lucy-williams-chunky-entwine-hoop-earrings-earrings-missoma-18ct-gold-plated-651006_800x.jpg?v=1659447432",
     title: "Small Hoops",
 },
 {
